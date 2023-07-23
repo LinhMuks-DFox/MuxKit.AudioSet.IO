@@ -34,7 +34,7 @@ class JsonBasedAudioSet(Dataset):
         if not os.path.exists(sample_path):
             raise IOError(f"Audio sample not found: <{sample_path}>")
         sample, sample_rate = torchaudio.load(sample_path, normalize=True)
-        onto = self.json_obj[f"{idx}"]["ontology"]
+        onto = self.json_obj[f"{idx}"]["onto"]
         label_digits = [int(i) for i in self.json_obj[f"{idx}"]["label_digits"]]
         label_display = self.json_obj[f"{idx}"]["label_display"]
         return sample, sample_rate, onto, label_digits, label_display
