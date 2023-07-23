@@ -22,7 +22,7 @@ CLASS_LABEL_INDICES = "class_labels_indices.csv"
 JSON_FILE_NAME = "class_labels_indices.json"
 
 json_content = dict()
-csv_reader = csv.reader(open(CLASS_LABEL_INDICES, "r"))
+csv_reader = csv.reader(f_in := open(CLASS_LABEL_INDICES, "r"))
 
 for row in csv_reader:
     json_content[row[1]] = {
@@ -33,3 +33,4 @@ for row in csv_reader:
 f_out = open(JSON_FILE_NAME, "w")
 json.dump(json_content, f_out, indent=4)
 f_out.close()
+f_in.close()
