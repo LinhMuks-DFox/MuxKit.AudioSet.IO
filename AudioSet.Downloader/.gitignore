@@ -1,0 +1,10 @@
+.idea/
+*.download/
+*.splits/
+*.waves/
+*.csv
+*.log
+*.mp4
+*.wav
+__pycache__
+tester.py
