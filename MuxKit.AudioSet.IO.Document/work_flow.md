@@ -56,7 +56,7 @@ The Downloader creates a one-to-one download directory for csv files, in this ca
 
 According to the label descriptions provided by the audio set, `label_digits` holds the number of the label, and `label_display` holds the label in a human-readable text format.
 
-正因如此，本项目中的`AudioSet.IO.JsonBasedAudioSet`在被下标访问数据时，会返回5个信息：
+Because of this, the `AudioSet.IO.JsonBasedAudioSet` in this project returns 5 information when the data is accessed by subscripts:
 
 * Data Sampling Itself
 
@@ -69,9 +69,24 @@ According to the label descriptions provided by the audio set, `label_digits` ho
 
 ```python
 from AudioSet.IO import JsonBasedAudioSet as jba
+from torch.utils.data import Dataset
+
+
+class MyDataSetForClassification(Dataset):
+
+    def __init__(self, path):
+        self.dataset_reader = jba.JsonBasedAudioSet(path)
+        self.transformer: Callable
+        self.label_embe: Callable # transform label(List[int]) to tensor(maybe one-hot?)
+
+	def __get_item(self, idx):
+        data_sample, _, _, label, _ = self.dataset_reader[idx] # get the information you need
+        label = self.label_embe(label)
+        data_sample = self.transformer(data_sample)
+        return data_sample, label
 
 data_dict_json_path = r"path/to/json/file/created/in/process/2/AudioSet.json"
-dataset = jba.JsonBasedAudioSet(data_dict_json_path)
-sample, sr, onto, label_digit, lable_str = dataset[0]
+dataset = MyDataSetForClassification(data_dict_json_path)
+data, lable = dataset[0]
 ```
 
