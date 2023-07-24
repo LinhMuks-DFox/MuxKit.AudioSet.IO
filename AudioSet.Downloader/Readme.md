@@ -1,4 +1,4 @@
-# AudioSetDownloader
+# Audio Set Downloader
 
 This is a python script specifically designed to download this [dataset](https://research.google.com/audioset/).
 
@@ -19,7 +19,7 @@ This program/code in published by MIT License.
     * [Balanced train](http://storage.googleapis.com/us_audioset/youtube_corpus/v1/csv/balanced_train_segments.csv)
     * [Unbalanced train](http://storage.googleapis.com/us_audioset/youtube_corpus/v1/csv/unbalanced_train_segments.csv)
 
-2. **REMOVE** the first four lines.
+2. **REMOVE** the first 3 lines.
 
     These csv files have a special format, the first 3 lines are unnecessary content. Of course, it can be kept in other places as metadata, but when running the script to try to download the audio corresponding to the script, please delete these four lines.
 
@@ -54,7 +54,7 @@ This program/code in published by MIT License.
 ### For Bug
 
 * If the downloader cannot download normally, **please consider whether the format of the csv file is legal and whether the first 3 lines have been removed.**
-* YouTube videos are not stable, the links in the database may be invalid. The data that is finally successfully downloaded and its label data will be saved in the split-pos.csv file. Please use this data as a benchmark.
+* YouTube videos are not stable, the links in the database may be invalid. The data that is finally successfully downloaded and its label data will be saved in the split-pos.csv file. Please use this .csv file for further works.
 * In addition, the data that failed to download is also recorded in the log file by the logger, please refer to this file.
 * If the experimental feature is turned on again, the program may not download properly, so please turn off the experimental feature.
 
