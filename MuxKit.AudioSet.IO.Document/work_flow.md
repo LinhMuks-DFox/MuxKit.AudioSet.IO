@@ -70,6 +70,7 @@ Because of this, the `AudioSet.IO.JsonBasedAudioSet` in this project returns 5 i
 ```python
 from AudioSet.IO import JsonBasedAudioSet as jba
 from torch.utils.data import Dataset
+from typing import Callable
 
 
 class MyDataSetForClassification(Dataset):
@@ -77,13 +78,14 @@ class MyDataSetForClassification(Dataset):
     def __init__(self, path):
         self.dataset_reader = jba.JsonBasedAudioSet(path)
         self.transformer: Callable
-        self.label_embe: Callable # transform label(List[int]) to tensor(maybe one-hot?)
+        self.label_embedding: Callable  # transform label(List[int]) to tensor(maybe one-hot?)
 
-	def __get_item(self, idx):
-        data_sample, _, _, label, _ = self.dataset_reader[idx] # get the information you need
+    def __getitem__(self, idx):
+        data_sample, _, _, label, _ = self.dataset_reader[idx]  # get the information you need
         label = self.label_embe(label)
         data_sample = self.transformer(data_sample)
         return data_sample, label
+
 
 data_dict_json_path = r"path/to/json/file/created/in/process/2/AudioSet.json"
 dataset = MyDataSetForClassification(data_dict_json_path)
