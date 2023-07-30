@@ -14,8 +14,8 @@ class TimeSequenceLengthFixingTransformerTestCase(unittest.TestCase):
         self.audio_sample_rate = 44100
         self.audio_sample_rate2 = 16000
 
-        self.transformer = transforms.TimeSequenceLengthFixingTransformer(self.length, self.audio_sample_rate)
-        self.transformer2 = transforms.TimeSequenceLengthFixingTransformer(self.length, self.audio_sample_rate2)
+        self.transformer = transforms.TimeSequenceLengthFixer(self.length, self.audio_sample_rate)
+        self.transformer2 = transforms.TimeSequenceLengthFixer(self.length, self.audio_sample_rate2)
         self.excepted_length = self.length * self.audio_sample_rate
         self.excepted_length2 = self.length * self.audio_sample_rate2
 
@@ -37,7 +37,7 @@ class SoundTrackSelectingTransformerTestCase(unittest.TestCase):
     def setUp(self) -> None:
         self.dataset1 = AudioSet("../data/AudioSet_Raw")
         self.select_mode = "left"
-        self.transformer = transforms.SoundTrackSelectingTransformer(self.select_mode)
+        self.transformer = transforms.SoundTrackSelector(self.select_mode)
 
     def test_transform(self):
         audio, sample_rate = self.dataset1[0]

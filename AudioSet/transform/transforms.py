@@ -5,12 +5,12 @@ import torch
 from AudioSet.utils import tensor_masking, create_mask_chunk_2d
 
 
-class TimeSequenceLengthFixingTransformer(torch.nn.Module):
+class TimeSequenceLengthFixer(torch.nn.Module):
     """
     Fix the length of time sequence.
     >>> import torchaudio
     >>> wav_form, sample_rate = torchaudio.load("test.wav")
-    >>> fixer = TimeSequenceLengthFixingTransformer(5, sample_rate)
+    >>> fixer = TimeSequenceLengthFixer(5, sample_rate)
     >>> fixed_wav_form = fixer(wav_form)
     >>> fixed_wav_form.shape
     """
@@ -34,12 +34,12 @@ class TimeSequenceLengthFixingTransformer(torch.nn.Module):
         return audio_data[:, random_start_time: random_start_time + self.fixed_length], random_start_time
 
 
-class SoundTrackSelectingTransformer(torch.nn.Module):
+class SoundTrackSelector(torch.nn.Module):
     """
     Select one track from stereo audio.
     >>> import torchaudio
     >>> wav_form, sample_rate = torchaudio.load("test.wav") # where test.wav is a stereo audio
-    >>> selector = SoundTrackSelectingTransformer("left") # see _VALID_TRACKS for valid tracks
+    >>> selector = SoundTrackSelector("left") # see _VALID_TRACKS for valid tracks
     >>> selected_wav_form = selector(wav_form)
     >>> selected_wav_form.shape
     """
