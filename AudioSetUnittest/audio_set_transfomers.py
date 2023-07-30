@@ -3,7 +3,7 @@ import unittest
 import torchaudio
 
 from AudioSet.IO.JsonBasedAudioSet import JsonBasedAudioSet as AudioSet
-from src import transforms
+from AudioSet.transform import transforms
 
 
 class TimeSequenceLengthFixingTransformerTestCase(unittest.TestCase):
