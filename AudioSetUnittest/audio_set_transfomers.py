@@ -14,8 +14,9 @@ class TimeSequenceLengthFixingTransformerTestCase(unittest.TestCase):
         self.audio_sample_rate = 44100
         self.audio_sample_rate2 = 16000
 
-        self.transformer = transforms.TimeSequenceLengthFixer(self.length, self.audio_sample_rate)
-        self.transformer2 = transforms.TimeSequenceLengthFixer(self.length, self.audio_sample_rate2)
+        self.transformer = transforms.TimeSequenceLengthFixer(self.length, self.audio_sample_rate, mode="random")
+        self.transformer2 = transforms.TimeSequenceLengthFixer(self.length, self.audio_sample_rate2, mode="start")
+        self.transformer3 = transforms.TimeSequenceLengthFixer(self.length, self.audio_sample_rate2, mode="e")
         self.excepted_length = self.length * self.audio_sample_rate
         self.excepted_length2 = self.length * self.audio_sample_rate2
 
