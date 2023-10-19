@@ -51,7 +51,8 @@ def make_json(data_json, sub_json, sub_statistic):
             sub_json[iota] = {
                 "path": value["path"],
                 "onto": SELECTED_LABELS[union]["onto"],
-                "label_digits": SELECTED_LABELS[union]["name"],
+                "label_display": SELECTED_LABELS[union]["name"],
+                "label_digits": SELECTED_LABELS[union]["label_digits"]
             }
             print(f"Added {key}({value['path']}, {value['label_display']}) to subset.")
             print(f"Union: {union}")
@@ -65,12 +66,13 @@ with open("sub_train.json", "w") as st, open("sub_eval.json", "w") as se, open("
     json.dump(sub_eval_json, se, indent=4)
 
     for k, v in SELECTED_LABELS.items():
-        d.write("label {}: \n\tonto: {}\n\tdisplay name: {}\n\tsample count(train:{}, eval:{})\n".format(k, v["onto"],
-                                                                                                         v["name"],
-                                                                                                         sub_train_statistic[
-                                                                                                             k],
-                                                                                                         sub_eval_statistic[
-                                                                                                             k]))
+        d.write("label {}: \n\t"
+                "onto: {}\n\t"
+                "display name: {}\n\t"
+                "sample count(train:{}, eval:{})\n\t"
+                "label_digits: {}\n".format(k, v["onto"], v["name"],
+                                            sub_train_statistic[k],
+                                            sub_eval_statistic[k], v["label_digits"]))
 
     d.write("Train dataset length: {}\n".format(len(sub_train_json)))
     d.write("Eval dataset length: {}\n".format(len(sub_eval_json)))
