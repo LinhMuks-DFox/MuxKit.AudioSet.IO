@@ -1,0 +1,834 @@
+{
+    "0": {
+        "path": "balanced_train_segments4000.csv.splits/-FEPOSP7ay0.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "1": {
+        "path": "balanced_train_segments4000.csv.splits/-VI2IRq17rs.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "2": {
+        "path": "balanced_train_segments4000.csv.splits/0amHVSbkaX8.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "3": {
+        "path": "balanced_train_segments4000.csv.splits/0ng703aLhXs.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "4": {
+        "path": "balanced_train_segments4000.csv.splits/1l7BjFDQLUM.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "5": {
+        "path": "balanced_train_segments4000.csv.splits/4JYJRqwqWGM.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "6": {
+        "path": "balanced_train_segments4000.csv.splits/4kyWH8eWP8M.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "7": {
+        "path": "balanced_train_segments4000.csv.splits/5_PvtlfQLOE.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "8": {
+        "path": "balanced_train_segments4000.csv.splits/60y9j_Dc-Xs.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "9": {
+        "path": "balanced_train_segments4000.csv.splits/63bSko4WgwE.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "10": {
+        "path": "balanced_train_segments4000.csv.splits/8StkM09rkCw.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "11": {
+        "path": "balanced_train_segments8000.csv.splits/9ZUzftiN2uw.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "12": {
+        "path": "balanced_train_segments8000.csv.splits/AaVUuKl8294.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "13": {
+        "path": "balanced_train_segments8000.csv.splits/AyFk10RjRS4.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "14": {
+        "path": "balanced_train_segments8000.csv.splits/BurGML_ZqSA.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "15": {
+        "path": "balanced_train_segments8000.csv.splits/Bvxvfq5GUI4.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "16": {
+        "path": "balanced_train_segments8000.csv.splits/C9K93AUFuvk.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "17": {
+        "path": "balanced_train_segments8000.csv.splits/CSfbHfwsIVE.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "18": {
+        "path": "balanced_train_segments8000.csv.splits/CpHRQ-f4UtA.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "19": {
+        "path": "balanced_train_segments8000.csv.splits/DITadeFq088.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "20": {
+        "path": "balanced_train_segments8000.csv.splits/DMMCiQB7-E4.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "21": {
+        "path": "balanced_train_segments8000.csv.splits/E6B81rrUlnE.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "22": {
+        "path": "balanced_train_segments8000.csv.splits/E6JR3htwgyE.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "23": {
+        "path": "balanced_train_segments8000.csv.splits/EHgzJwWi5vg.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "24": {
+        "path": "balanced_train_segments8000.csv.splits/EX-5P7YdWsc.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "25": {
+        "path": "balanced_train_segments8000.csv.splits/Gpk-aZXZN10.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "26": {
+        "path": "balanced_train_segments8000.csv.splits/HxO2GRMD_fw.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "27": {
+        "path": "balanced_train_segments8000.csv.splits/I3etAR5FQjo.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "28": {
+        "path": "balanced_train_segments8000.csv.splits/IYrVF4tHN08.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "29": {
+        "path": "balanced_train_segments12000.csv.splits/JUrYWttZJBM.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "30": {
+        "path": "balanced_train_segments12000.csv.splits/Jj9orXFko0Y.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "31": {
+        "path": "balanced_train_segments12000.csv.splits/LGrAwQnZ6Bs.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "32": {
+        "path": "balanced_train_segments12000.csv.splits/LPvP5Cu4FwY.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "33": {
+        "path": "balanced_train_segments12000.csv.splits/LTDle_h2YD8.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "34": {
+        "path": "balanced_train_segments12000.csv.splits/N3pxp1FCJRQ.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "35": {
+        "path": "balanced_train_segments12000.csv.splits/N8Fg3L1Cc5E.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "36": {
+        "path": "balanced_train_segments12000.csv.splits/NUHlTnLitqk.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "37": {
+        "path": "balanced_train_segments12000.csv.splits/Npbs_4DZgEQ.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "38": {
+        "path": "balanced_train_segments12000.csv.splits/OMApGp219Zc.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "39": {
+        "path": "balanced_train_segments12000.csv.splits/OiJIg2YXfRU.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "40": {
+        "path": "balanced_train_segments12000.csv.splits/PCsQ3zgL3CU.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "41": {
+        "path": "balanced_train_segments12000.csv.splits/QoZynUVXz08.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "42": {
+        "path": "balanced_train_segments12000.csv.splits/R0ws0tATJLg.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "43": {
+        "path": "balanced_train_segments12000.csv.splits/R2MSnjisxw4.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "44": {
+        "path": "balanced_train_segments12000.csv.splits/RAYmbd9bLoE.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "45": {
+        "path": "balanced_train_segments12000.csv.splits/RIe1omxr7nc.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "46": {
+        "path": "balanced_train_segments12000.csv.splits/Rf7vygfb7w4.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "47": {
+        "path": "balanced_train_segments12000.csv.splits/SXFMAPPaAbA.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "48": {
+        "path": "balanced_train_segments12000.csv.splits/SbUwQctvbHg.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "49": {
+        "path": "balanced_train_segments12000.csv.splits/Sdnv8043mdk.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "50": {
+        "path": "balanced_train_segments12000.csv.splits/TO8KNt8rckw.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "51": {
+        "path": "balanced_train_segments12000.csv.splits/TkHZdMJPwKc.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "52": {
+        "path": "balanced_train_segments12000.csv.splits/U0xhbrULfNY.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "53": {
+        "path": "balanced_train_segments12000.csv.splits/Uu8m1oOWkiE.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "54": {
+        "path": "balanced_train_segments16000.csv.splits/VJTYKB1d_Uw.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "55": {
+        "path": "balanced_train_segments16000.csv.splits/Vbx6TFxSPYY.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "56": {
+        "path": "balanced_train_segments16000.csv.splits/Vge67eYk6Ew.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "57": {
+        "path": "balanced_train_segments16000.csv.splits/VzGHr0aV220.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "58": {
+        "path": "balanced_train_segments16000.csv.splits/WZd2nT2Afds.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "59": {
+        "path": "balanced_train_segments16000.csv.splits/X57kxGGTXdo.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "60": {
+        "path": "balanced_train_segments16000.csv.splits/YGNBzNCHsd0.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "61": {
+        "path": "balanced_train_segments16000.csv.splits/ZSItez9gTyY.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "62": {
+        "path": "balanced_train_segments16000.csv.splits/ZaofVJP8QYI.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "63": {
+        "path": "balanced_train_segments16000.csv.splits/_G3lYKAITu8.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "64": {
+        "path": "balanced_train_segments16000.csv.splits/_JTHtcRHxnw.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "65": {
+        "path": "balanced_train_segments16000.csv.splits/_Slo8QXYOp8.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "66": {
+        "path": "balanced_train_segments16000.csv.splits/aNjtfIoVzas.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "67": {
+        "path": "balanced_train_segments16000.csv.splits/bLtfHk5VSHQ.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "68": {
+        "path": "balanced_train_segments16000.csv.splits/d-zH-RFj1EU.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "69": {
+        "path": "balanced_train_segments16000.csv.splits/d6nURbq86zM.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "70": {
+        "path": "balanced_train_segments16000.csv.splits/e_HhPw57sfA.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "71": {
+        "path": "balanced_train_segments16000.csv.splits/fU9woCZqemw.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "72": {
+        "path": "balanced_train_segments16000.csv.splits/fwLc41q5Sow.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "73": {
+        "path": "balanced_train_segments16000.csv.splits/g8wdhSb01RY.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "74": {
+        "path": "balanced_train_segments20000.csv.splits/gfgUPBApY7s.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "75": {
+        "path": "balanced_train_segments20000.csv.splits/k9YfSvMiUX0.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "76": {
+        "path": "balanced_train_segments20000.csv.splits/kXApHFgX2HQ.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "77": {
+        "path": "balanced_train_segments20000.csv.splits/krCoBVQZLiQ.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "78": {
+        "path": "balanced_train_segments20000.csv.splits/kxlWRgKK1RU.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "79": {
+        "path": "balanced_train_segments20000.csv.splits/mOFyRCMlXIo.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "80": {
+        "path": "balanced_train_segments20000.csv.splits/maZ3b5w6xVI.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "81": {
+        "path": "balanced_train_segments20000.csv.splits/me_X5bkJBiA.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "82": {
+        "path": "balanced_train_segments20000.csv.splits/nB2Lf5TTmBs.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "83": {
+        "path": "balanced_train_segments20000.csv.splits/pMdGwLkqk58.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "84": {
+        "path": "balanced_train_segments20000.csv.splits/pgLfSVznfm4.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "85": {
+        "path": "balanced_train_segments20000.csv.splits/q7sK_xrJz-k.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "86": {
+        "path": "balanced_train_segments20000.csv.splits/qFTMEVccUMg.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "87": {
+        "path": "balanced_train_segments20000.csv.splits/qV_VxEAXXDU.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "88": {
+        "path": "balanced_train_segments20000.csv.splits/qb8dYOgk2Mc.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "89": {
+        "path": "balanced_train_segments20000.csv.splits/sd1gAgsXMsc.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "90": {
+        "path": "balanced_train_segments24000.csv.splits/t3zeNkXa0CM.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "91": {
+        "path": "balanced_train_segments24000.csv.splits/tR2SF1LdMuk.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "92": {
+        "path": "balanced_train_segments24000.csv.splits/tTfIrUNNoic.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "93": {
+        "path": "balanced_train_segments24000.csv.splits/tnSM-SnE5Lk.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "94": {
+        "path": "balanced_train_segments24000.csv.splits/u0CgRmXMXNc.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "95": {
+        "path": "balanced_train_segments24000.csv.splits/u4VxZR2PSKs.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "96": {
+        "path": "balanced_train_segments24000.csv.splits/u8PSTB2D9Ro.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "97": {
+        "path": "balanced_train_segments24000.csv.splits/uBCBppnw7OU.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "98": {
+        "path": "balanced_train_segments24000.csv.splits/uLp6z37bfVE.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "99": {
+        "path": "balanced_train_segments24000.csv.splits/uq9kej0JLb4.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "100": {
+        "path": "balanced_train_segments24000.csv.splits/vsDriIwNAmU.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "101": {
+        "path": "balanced_train_segments24000.csv.splits/wax6gWNp5jM.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "102": {
+        "path": "balanced_train_segments24000.csv.splits/zNYHzcIRMFY.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "103": {
+        "path": "balanced_train_segments24000.csv.splits/zrb76mJOZQQ.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    }
+}

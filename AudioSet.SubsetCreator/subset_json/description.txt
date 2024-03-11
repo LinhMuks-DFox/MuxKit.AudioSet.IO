@@ -1,0 +1,12 @@
+label 200: 
+	onto: /m/0395lw
+	display name: Bell
+	sample count(train:52, eval:52)
+	label_digits: [0]
+label 388: 
+	onto: /m/07pp_mv
+	display name: Alarm
+	sample count(train:52, eval:53)
+	label_digits: [1]
+Train dataset length: 104
+Eval dataset length: 105

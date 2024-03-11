@@ -1,0 +1,842 @@
+{
+    "0": {
+        "path": "eval_segments_4000.csv.splits/-BAF0DHMqVA.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "1": {
+        "path": "eval_segments_4000.csv.splits/-pUfYFcsgG4.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "2": {
+        "path": "eval_segments_4000.csv.splits/1DS0AE3vTwA.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "3": {
+        "path": "eval_segments_4000.csv.splits/1IlgE0S4t3E.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "4": {
+        "path": "eval_segments_4000.csv.splits/1SvA8MMap-A.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "5": {
+        "path": "eval_segments_4000.csv.splits/31c2kosdtuo.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "6": {
+        "path": "eval_segments_4000.csv.splits/3o-q-VMhyA8.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "7": {
+        "path": "eval_segments_4000.csv.splits/4LZaV_Su0Us.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "8": {
+        "path": "eval_segments_4000.csv.splits/64FYj_KHcC4.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "9": {
+        "path": "eval_segments_4000.csv.splits/77bRcIdLuT0.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "10": {
+        "path": "eval_segments_4000.csv.splits/7FlTfWm2fVY.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "11": {
+        "path": "eval_segments_4000.csv.splits/7WTFbV_jhmQ.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "12": {
+        "path": "eval_segments_4000.csv.splits/7chwYGGSkmE.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "13": {
+        "path": "eval_segments_4000.csv.splits/8W82WdRBx4E.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "14": {
+        "path": "eval_segments_4000.csv.splits/9OqtuFGCCR8.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "15": {
+        "path": "eval_segments_8000.csv.splits/AY1hdYiJUCQ.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "16": {
+        "path": "eval_segments_8000.csv.splits/AzhfZ8rNhRk.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "17": {
+        "path": "eval_segments_8000.csv.splits/B8HCQ3rEXM4.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "18": {
+        "path": "eval_segments_8000.csv.splits/BAcOXGA5Na8.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "19": {
+        "path": "eval_segments_8000.csv.splits/C3Jhu77uffQ.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "20": {
+        "path": "eval_segments_8000.csv.splits/C7TihoHf_hM.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "21": {
+        "path": "eval_segments_8000.csv.splits/DUmXpq-Cksg.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "22": {
+        "path": "eval_segments_8000.csv.splits/DqGNQbGXbcc.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "23": {
+        "path": "eval_segments_8000.csv.splits/DvmXcb9OYQs.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "24": {
+        "path": "eval_segments_8000.csv.splits/DwQ1WyGETDY.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "25": {
+        "path": "eval_segments_8000.csv.splits/ENHpFkKiyrU.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "26": {
+        "path": "eval_segments_8000.csv.splits/FBut7W5XwnA.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "27": {
+        "path": "eval_segments_8000.csv.splits/FJQMtiYyWh0.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "28": {
+        "path": "eval_segments_8000.csv.splits/GCJkUrPp6hY.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "29": {
+        "path": "eval_segments_8000.csv.splits/IUD_ZYOh2MM.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "30": {
+        "path": "eval_segments_8000.csv.splits/Ix20YY5ABXg.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "31": {
+        "path": "eval_segments_8000.csv.splits/JCsuOzlwJqA.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "32": {
+        "path": "eval_segments_8000.csv.splits/L42QOVxvWF4.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "33": {
+        "path": "eval_segments_8000.csv.splits/L6GLUMUJn3A.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "34": {
+        "path": "eval_segments_12000.csv.splits/LQsR8LM0F_s.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "35": {
+        "path": "eval_segments_12000.csv.splits/LsRS0oDgycs.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "36": {
+        "path": "eval_segments_12000.csv.splits/MsSGlmAJU7A.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "37": {
+        "path": "eval_segments_12000.csv.splits/NBWFWIkb02c.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "38": {
+        "path": "eval_segments_12000.csv.splits/NgBE9eFXXxA.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "39": {
+        "path": "eval_segments_12000.csv.splits/Nlaxco_z_YQ.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "40": {
+        "path": "eval_segments_12000.csv.splits/Nz4iLzJBTBo.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "41": {
+        "path": "eval_segments_12000.csv.splits/OZPaJ2pw6H0.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "42": {
+        "path": "eval_segments_12000.csv.splits/PDxndq4TP0M.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "43": {
+        "path": "eval_segments_12000.csv.splits/Qaqqxq9E9p8.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "44": {
+        "path": "eval_segments_12000.csv.splits/RayuVcywno0.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "45": {
+        "path": "eval_segments_12000.csv.splits/S3PjLldhdWI.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "46": {
+        "path": "eval_segments_12000.csv.splits/Sp1YBy4h9OY.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "47": {
+        "path": "eval_segments_12000.csv.splits/TIASpLtI8ks.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "48": {
+        "path": "eval_segments_12000.csv.splits/TW-lRARx47c.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "49": {
+        "path": "eval_segments_12000.csv.splits/T_FZMsRHzLc.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "50": {
+        "path": "eval_segments_12000.csv.splits/TnCXmm-v3Ys.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "51": {
+        "path": "eval_segments_12000.csv.splits/TrJVgGnA7rw.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "52": {
+        "path": "eval_segments_12000.csv.splits/UsdoUjuczY4.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "53": {
+        "path": "eval_segments_12000.csv.splits/V4aDIs2Zu0w.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "54": {
+        "path": "eval_segments_12000.csv.splits/Vp7Xd48KndU.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "55": {
+        "path": "eval_segments_12000.csv.splits/W7gn2todzbg.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "56": {
+        "path": "eval_segments_12000.csv.splits/WMFhxM5LmyU.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "57": {
+        "path": "eval_segments_12000.csv.splits/WxPBSJsUEhU.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "58": {
+        "path": "eval_segments_12000.csv.splits/XaETaAo1FOQ.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "59": {
+        "path": "eval_segments_16000.csv.splits/XqEvIeQTpSM.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "60": {
+        "path": "eval_segments_16000.csv.splits/XykUpCigu4w.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "61": {
+        "path": "eval_segments_16000.csv.splits/YLDlKY1HaNU.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "62": {
+        "path": "eval_segments_16000.csv.splits/Zxyfhub6nV4.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "63": {
+        "path": "eval_segments_16000.csv.splits/_Uf47SnKl5Q.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "64": {
+        "path": "eval_segments_16000.csv.splits/_WGTedHMJDA.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "65": {
+        "path": "eval_segments_16000.csv.splits/_yrTKvc4mh8.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "66": {
+        "path": "eval_segments_16000.csv.splits/a3jZ7QBDhgc.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "67": {
+        "path": "eval_segments_16000.csv.splits/bEhe91Tr0Z8.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "68": {
+        "path": "eval_segments_16000.csv.splits/bHNdoIWxXDk.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "69": {
+        "path": "eval_segments_16000.csv.splits/bI6hI2WEopM.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "70": {
+        "path": "eval_segments_16000.csv.splits/c9JyKnsegog.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "71": {
+        "path": "eval_segments_16000.csv.splits/cBKNGWTbCbM.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "72": {
+        "path": "eval_segments_16000.csv.splits/ccqQ62HtEuY.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "73": {
+        "path": "eval_segments_16000.csv.splits/ddm8gvmItHU.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "74": {
+        "path": "eval_segments_16000.csv.splits/eG964VYp9Tw.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "75": {
+        "path": "eval_segments_16000.csv.splits/fcsGkE89Qi8.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "76": {
+        "path": "eval_segments_16000.csv.splits/gVDSFrufSJ8.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "77": {
+        "path": "eval_segments_16000.csv.splits/geFD3u6Cwis.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "78": {
+        "path": "eval_segments_16000.csv.splits/ggBZUkuS1QI.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "79": {
+        "path": "eval_segments_16000.csv.splits/hkD0DeZzKJ8.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "80": {
+        "path": "eval_segments_16000.csv.splits/i6k1yiyO5jQ.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "81": {
+        "path": "eval_segments_16000.csv.splits/jFcUXJ8iv8g.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "82": {
+        "path": "eval_segments_16000.csv.splits/jhsce15byHc.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "83": {
+        "path": "eval_segments_16000.csv.splits/joLyjgORwDo.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "84": {
+        "path": "eval_segments_20000.csv.splits/kLDsAolJumU.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "85": {
+        "path": "eval_segments_20000.csv.splits/l26vF_pPsdw.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "86": {
+        "path": "eval_segments_20000.csv.splits/mJ5dwA9Pjz4.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "87": {
+        "path": "eval_segments_20000.csv.splits/o8uJobJ8fiU.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "88": {
+        "path": "eval_segments_20000.csv.splits/omVDsmGevlI.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "89": {
+        "path": "eval_segments_20000.csv.splits/q0zOkBbGtbo.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "90": {
+        "path": "eval_segments_20000.csv.splits/q_rKv5CdCfI.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "91": {
+        "path": "eval_segments_20000.csv.splits/rLtXML8Y5wo.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "92": {
+        "path": "eval_segments_20000.csv.splits/rVymW4Nb4NU.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "93": {
+        "path": "eval_segments_20000.csv.splits/sOyYhddzWl0.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "94": {
+        "path": "eval_segments_20000.csv.splits/sgTZHSTnU40.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "95": {
+        "path": "eval_segments_20000.csv.splits/uA3bpAQV_hE.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "96": {
+        "path": "eval_segments_20000.csv.splits/uDRWiWGI8cc.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "97": {
+        "path": "eval_segments_20000.csv.splits/uaXovgMIDNc.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "98": {
+        "path": "eval_segments_20000.csv.splits/weVz-cPX_Ik.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "99": {
+        "path": "eval_segments_20000.csv.splits/x9gE-IPfg3M.wav",
+        "onto": "/m/0395lw",
+        "label_display": "Bell",
+        "label_digits": [
+            0
+        ]
+    },
+    "100": {
+        "path": "eval_segments_20000.csv.splits/yMqeKGZseRc.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "101": {
+        "path": "eval_segments_20000.csv.splits/yOaQTZCr27I.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "102": {
+        "path": "eval_segments_20000.csv.splits/ycs92N_rph8.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "103": {
+        "path": "eval_segments_24000.csv.splits/zCnwAwXPDKk.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    },
+    "104": {
+        "path": "eval_segments_24000.csv.splits/zICAuYzrUQ0.wav",
+        "onto": "/m/07pp_mv",
+        "label_display": "Alarm",
+        "label_digits": [
+            1
+        ]
+    }
+}

@@ -27,6 +27,8 @@ Dataset structure:
         ]
     }
 """
+if not PATH_TO_TRAIN_JSON.exists() or not PATH_TO_EVAL_PATH.exists():
+    raise FileNotFoundError("Train or eval json file not found.")
 
 with open(PATH_TO_TRAIN_JSON, "r") as t, open(PATH_TO_EVAL_PATH, "r") as e:
     train_data_json = json.load(t)
@@ -59,14 +61,17 @@ def make_json(data_json, sub_json, sub_statistic):
             iota += 1
 
 
-with open("sub_train.json", "w") as st, open("sub_eval.json", "w") as se, open("description.txt", "w") as d:
+with (open("sub_train.json", "w") as st,
+      open("sub_eval.json", "w") as se,
+      open("description.txt", "w") as description_file,
+      open("class_labels_indices.json", "w") as class_labels_indices_file):
     make_json(train_data_json, sub_train_json, sub_train_statistic)
     make_json(eval_data_json, sub_eval_json, sub_eval_statistic)
     json.dump(sub_train_json, st, indent=4)
     json.dump(sub_eval_json, se, indent=4)
 
     for k, v in SELECTED_LABELS.items():
-        d.write("label {}: \n\t"
+        description_file.write("label {}: \n\t"
                 "onto: {}\n\t"
                 "display name: {}\n\t"
                 "sample count(train:{}, eval:{})\n\t"
@@ -74,8 +79,8 @@ with open("sub_train.json", "w") as st, open("sub_eval.json", "w") as se, open("
                                             sub_train_statistic[k],
                                             sub_eval_statistic[k], v["label_digits"]))
 
-    d.write("Train dataset length: {}\n".format(len(sub_train_json)))
-    d.write("Eval dataset length: {}\n".format(len(sub_eval_json)))
+    description_file.write("Train dataset length: {}\n".format(len(sub_train_json)))
+    description_file.write("Eval dataset length: {}\n".format(len(sub_eval_json)))
 
 # move files
 if os.path.exists("subset_json"):
