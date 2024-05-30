@@ -25,9 +25,9 @@ json_content = dict()
 csv_reader = csv.reader(f_in := open(CLASS_LABEL_INDICES, "r"))
 
 for row in csv_reader:
-    json_content[row[1]] = {
+    json_content[row[0]] = {
         "display_name": row[2],
-        "index": row[0],
+        "mid": row[1],
     }
 
 f_out = open(JSON_FILE_NAME, "w")
