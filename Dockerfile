@@ -22,12 +22,16 @@ RUN apt-get update -y && apt-get install -y python3 python3-pip && \
     pip3 install --upgrade pip setuptools requests && \
     pip3 install poetry autopep8 
 
+RUN apt-get update
+RUN apt-get install -y ffmpeg
+RUN apt-get install -y yt-dlp
+
 # 设置工作目录
 WORKDIR /workspace
 
 # 复制 Poetry 文件并安装依赖
 COPY pyproject.toml poetry.lock* ./
-# RUN poetry install
+RUN poetry install
 
 # 设置 Jupyter Lab
 # RUN mkdir -p /workspace/notebooks
