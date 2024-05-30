@@ -20,11 +20,11 @@ RUN apt-get update -y && apt-get upgrade -y --fix-missing && \
 # 安装 Python 和 Poetry
 RUN apt-get update -y && apt-get install -y python3 python3-pip && \
     pip3 install --upgrade pip setuptools requests && \
-    pip3 install poetry autopep8 
+    pip3 install poetry autopep8 yt-dlp
 
 RUN apt-get update
 RUN apt-get install -y ffmpeg
-RUN apt-get install -y yt-dlp
+RUN alias cls=clear
 
 # 设置工作目录
 WORKDIR /workspace

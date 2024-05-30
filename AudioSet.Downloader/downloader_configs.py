@@ -27,7 +27,7 @@ CSV_FILE_NAMES: List[str] = [
     "unbalanced_train_segments_24.csv"
 ]
 YTB_URL_FORMAT: str = "https://www.youtube.com/watch?v={YTID}"
-TIMER: int = 5  # using -1 , to download all
+TIMER: int = -1  # using -1 , to download all
 DOWN_HIGHEST_QUALITY: bool = True
 REMOVE_EXIST_DOWNLOADS: bool = False
 DEBUG: bool = False
@@ -35,3 +35,4 @@ DEBUG: bool = False
 ONLY_AUDIO: bool = False
 DELETE_DOWNLOADED_VIDEO: bool = True
 DELETE_WAVE_FILE: bool = True
+CONCURRENT_TASKS: int = 5  # 每次并发处理的任务数
