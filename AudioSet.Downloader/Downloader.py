@@ -1,7 +1,6 @@
 import csv
 import logging
 import os
-import pathlib
 import shutil
 import subprocess
 import sys
@@ -18,7 +17,6 @@ except ImportError:
 
 VERSION = [1, 0, 2]
 
-
 async def run_subprocess(cmd):
     proc = await asyncio.create_subprocess_exec(*cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdout, stderr = await proc.communicate()
@@ -26,102 +24,52 @@ async def run_subprocess(cmd):
         logging.error(f'Command failed with exit code {proc.returncode}\n{stderr.decode()}')
     return proc.returncode == 0
 
-
-async def convert_to_wav(filename: str, save_dir: str) -> Union[str, None]:
-    basename = os.path.basename(filename)
-    name, _ = os.path.splitext(basename)
-    output_name = os.path.join(save_dir, f"{name}.wav")
-    success = await run_subprocess([
-        "ffmpeg",
-        "-i", filename,
-        output_name
-    ])
-    if not success:
-        return None
-    return output_name
-
-
-async def splits_audio(filename: str, start_sec: int, end_sec: int, save_dir: str) -> Union[str, None]:
-    basename = os.path.basename(filename)
-    name, _ = os.path.splitext(basename)
-    output_name = os.path.join(save_dir, f"{name}.wav")
-    success = await run_subprocess([
-        "ffmpeg",
-        "-ss", str(start_sec),
-        "-i", filename,
-        "-t", str(end_sec - start_sec),
-        output_name
-    ])
-    if not success:
-        return None
-    return output_name
-
-
-async def download_video(url: str, youtube_id: str, save_dir: str, highest_quality=False, only_audio=False) -> Union[str, None]:
+async def download_video_clip(url: str, youtube_id: str, start_sec: int, end_sec: int, save_dir: str) -> Union[str, None]:
+    output_name = os.path.join(save_dir, f"{youtube_id}.mp4")
     try:
-        if only_audio:
-            download_file_name = pytube.YouTube(url).streams.get_audio_only().download()
-        elif highest_quality:
-            download_file_name = pytube.YouTube(url).streams.filter(progressive=True).order_by('resolution').desc().first().download()
-        else:
-            download_file_name = pytube.YouTube(url).streams.first().download()
-        _, ext_name = os.path.splitext(download_file_name)
-        moved_name = os.path.join(save_dir, f"{youtube_id}{ext_name}")
-        pathlib.Path(download_file_name).rename(moved_name)
-        return moved_name
+        download_cmd = [
+            "yt-dlp",
+            "-f", "bestaudio",
+            "--external-downloader", "ffmpeg",
+            "--external-downloader-args", f"ffmpeg_i:-ss {start_sec} -to {end_sec}",
+            "-o", output_name,
+            url
+        ]
+        success = await run_subprocess(download_cmd)
+        if not success:
+            return None
+        return output_name
     except Exception as e:
         logging.error(f"Download failed for {url}: {e}")
         return None
 
+async def extract_audio(video_file: str, save_dir: str) -> Union[str, None]:
+    basename = os.path.basename(video_file)
+    name, _ = os.path.splitext(basename)
+    output_name = os.path.join(save_dir, f"{name}.wav")
+    success = await run_subprocess([
+        "ffmpeg",
+        "-i", video_file,
+        "-vn",
+        "-acodec", "pcm_s16le",
+        "-ar", "44100",
+        "-ac", "2",
+        output_name
+    ])
+    if not success:
+        return None
+    return output_name
 
-async def process_video(url, ytid, dl_video_save_dir, wav_temps_dir, splits_dir, start_sec, end_sec, only_audio, highest_quality, delete_video, delete_wav):
-    output_wav_path = os.path.join(splits_dir, f"{ytid}.wav")
-    if os.path.exists(output_wav_path):
-        logging.info(f"File {output_wav_path} already exists, skipping download.")
-        return output_wav_path
-
-    moved_name = await download_video(url, ytid, dl_video_save_dir, highest_quality, only_audio)
-    if moved_name:
-        logging.info(f"Converting file<{moved_name}> to .wav format.")
-        wave_name = await convert_to_wav(moved_name, wav_temps_dir)
-        if wave_name:
-            logging.info(f"Splitting file<{wave_name}>, from {start_sec} to {end_sec}")
-            split_name = await splits_audio(wave_name, start_sec, end_sec, splits_dir)
-            if split_name:
-                if delete_video:
-                    logging.info(f"Deleting video file<{moved_name}>")
-                    os.remove(moved_name)
-                if delete_wav:
-                    logging.info(f"Deleting wave file<{wave_name}>")
-                    os.remove(wave_name)
-                return split_name
-    return None
-
-
-async def process_csv_file(csv_file: str, timer: int, remove_exist: bool, youtube_url_fmt: str, only_audio=False, highest_quality=False, delete_video=False, delete_wav=False) -> None:
+async def process_csv_file(csv_file: str, timer: int, remove_exist: bool, youtube_url_fmt: str) -> None:
     logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s - pid:%(process)d", handlers=[
                         logging.FileHandler(filename=f"{csv_file}_dl.log", mode="w"), logging.StreamHandler(stream=sys.stdout)])
-    dl_video_save_dir = f"./{csv_file}.download/"
-    wav_temps_dir = f"./{csv_file}.waves/"
-    splits_dir = f"./{csv_file}.splits/"
-    if not os.path.exists(dl_video_save_dir):
-        os.makedirs(dl_video_save_dir)
+    save_dir = f"./{csv_file}.splits/"
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
     else:
         if remove_exist:
-            shutil.rmtree(dl_video_save_dir)
-            os.makedirs(dl_video_save_dir)
-    if not os.path.exists(wav_temps_dir):
-        os.makedirs(wav_temps_dir)
-    else:
-        if remove_exist:
-            shutil.rmtree(wav_temps_dir)
-            os.makedirs(wav_temps_dir)
-    if not os.path.exists(splits_dir):
-        os.makedirs(splits_dir)
-    else:
-        if remove_exist:
-            shutil.rmtree(splits_dir)
-            os.makedirs(splits_dir)
+            shutil.rmtree(save_dir)
+            os.makedirs(save_dir)
 
     tasks = []
     async with aio_open(f"{csv_file}.split-pos.csv", "w") as split_audio_positive_label:
@@ -132,27 +80,29 @@ async def process_csv_file(csv_file: str, timer: int, remove_exist: bool, youtub
                     break
                 raw = {"YTID": line[0], "start_sec": int(float(line[1].replace(" ", ""))), "end_sec": int(float(line[2].replace(" ", ""))), "positive_labels": line[3:]}
                 url = youtube_url_fmt.format(YTID=raw["YTID"])
-                task = asyncio.create_task(process_video(url, raw["YTID"], dl_video_save_dir, wav_temps_dir, splits_dir, raw["start_sec"], raw["end_sec"], only_audio, highest_quality, delete_video, delete_wav))
+                task = asyncio.create_task(download_and_process(url, raw["YTID"], raw["start_sec"], raw["end_sec"], save_dir, split_audio_positive_label, raw["positive_labels"]))
                 tasks.append(task)
 
-            for future in asyncio.as_completed(tasks):
-                split_name = await future
-                if split_name:
-                    await split_audio_positive_label.write(f'{split_name}, {"{}".format(",".join(raw["positive_labels"]))}\n')
-                    await split_audio_positive_label.flush()
+            await asyncio.gather(*tasks)
 
+async def download_and_process(url, ytid, start_sec, end_sec, save_dir, split_audio_positive_label, positive_labels):
+    video_file = await download_video_clip(url, ytid, start_sec, end_sec, save_dir)
+    if video_file:
+        audio_file = await extract_audio(video_file, save_dir)
+        if audio_file:
+            await split_audio_positive_label.write(f'{audio_file}, {"{}".format(",".join(positive_labels))}\n')
+            await split_audio_positive_label.flush()
+        os.remove(video_file)
 
-def run_process_csv_file(csv_file, timer, remove_exist, youtube_url_fmt, only_audio, highest_quality, delete_video, delete_wav):
-    asyncio.run(process_csv_file(csv_file, timer, remove_exist, youtube_url_fmt, only_audio, highest_quality, delete_video, delete_wav))
-
+def run_process_csv_file(csv_file, timer, remove_exist, youtube_url_fmt):
+    asyncio.run(process_csv_file(csv_file, timer, remove_exist, youtube_url_fmt))
 
 def main():
     if DEBUG:
-        run_process_csv_file(CSV_FILE_NAMES[0], TIMER, REMOVE_EXIST_DOWNLOADS, YTB_URL_FORMAT, ONLY_AUDIO, DOWN_HIGHEST_QUALITY, DELETE_DOWNLOADED_VIDEO, DELETE_WAVE_FILE)
+        run_process_csv_file(CSV_FILE_NAMES[0], TIMER, REMOVE_EXIST_DOWNLOADS, YTB_URL_FORMAT)
     else:
         with multiprocessing.Pool() as pool:
-            pool.starmap(run_process_csv_file, [(csv_file, TIMER, REMOVE_EXIST_DOWNLOADS, YTB_URL_FORMAT, ONLY_AUDIO, DOWN_HIGHEST_QUALITY, DELETE_DOWNLOADED_VIDEO, DELETE_WAVE_FILE) for csv_file in CSV_FILE_NAMES])
-
+            pool.starmap(run_process_csv_file, [(csv_file, TIMER, REMOVE_EXIST_DOWNLOADS, YTB_URL_FORMAT) for csv_file in CSV_FILE_NAMES])
 
 if __name__ == "__main__":
     main()
