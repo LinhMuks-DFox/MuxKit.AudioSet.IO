@@ -5,6 +5,7 @@ import shutil
 import subprocess
 import sys
 import asyncio
+import random
 from aiofiles import open as aio_open
 from typing import Union, Dict
 import multiprocessing
@@ -20,11 +21,11 @@ async def run_subprocess(cmd):
     return proc.returncode == 0
 
 async def download_video_clip(url: str, youtube_id: str, start_sec: int, end_sec: int, save_dir: str) -> Union[str, None]:
+    await asyncio.sleep(random.uniform(1, 3))
     output_name = os.path.join(save_dir, f"{youtube_id}.mp4")
     if os.path.exists(output_name):
         logging.info(f"File {output_name} already exists, skipping download.")
         return output_name
-    
     try:
         download_cmd = [
             "yt-dlp",
@@ -37,6 +38,8 @@ async def download_video_clip(url: str, youtube_id: str, start_sec: int, end_sec
         success = await run_subprocess(download_cmd)
         if not success:
             return None
+        else:
+            logging.info(f"Downloaded {output_name}")
         return output_name
     except Exception as e:
         logging.error(f"Download failed for {url}: {e}")
@@ -61,6 +64,8 @@ async def extract_audio(video_file: str, save_dir: str) -> Union[str, None]:
     ])
     if not success:
         return None
+    else:
+        logging.info(f"Downloaded {output_name}")
     return output_name
 
 async def download_and_process(url, ytid, start_sec, end_sec, save_dir, split_audio_positive_label, positive_labels, semaphore, log_file, progress: Dict[str, bool]):

@@ -30,11 +30,11 @@ YTB_URL_FORMAT: str = "https://www.youtube.com/watch?v={YTID}"
 TIMER: int = 10  # using -1 , to download all
 DOWN_HIGHEST_QUALITY: bool = True
 REMOVE_EXIST_DOWNLOADS: bool = False
-DEBUG: bool = True
+DEBUG: bool = False
 # Experimental Features
 ONLY_AUDIO: bool = False
 DELETE_DOWNLOADED_VIDEO: bool = True
 DELETE_WAVE_FILE: bool = True
 CONCURRENT_TASKS: int = 2  # 每次并发处理的任务数，减少负载
 LOG_FILE: str = "download_progress.log"
-POOL_SIZE = 12
+POOL_SIZE = 2
