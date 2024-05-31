@@ -6,7 +6,7 @@ import subprocess
 import sys
 import asyncio
 from aiofiles import open as aio_open
-from typing import Union
+from typing import Union, Dict
 import multiprocessing
 from downloader_configs import *
 
@@ -63,7 +63,7 @@ async def extract_audio(video_file: str, save_dir: str) -> Union[str, None]:
         return None
     return output_name
 
-async def download_and_process(url, ytid, start_sec, end_sec, save_dir, split_audio_positive_label, positive_labels, semaphore):
+async def download_and_process(url, ytid, start_sec, end_sec, save_dir, split_audio_positive_label, positive_labels, semaphore, log_file, progress: Dict[str, bool]):
     async with semaphore:
         video_file = await download_video_clip(url, ytid, start_sec, end_sec, save_dir)
         if video_file:
@@ -71,10 +71,14 @@ async def download_and_process(url, ytid, start_sec, end_sec, save_dir, split_au
             if audio_file:
                 await split_audio_positive_label.write(f'{audio_file}, {"{}".format(",".join(positive_labels))}\n')
                 await split_audio_positive_label.flush()
+                async with aio_open(log_file, "a") as log:
+                    await log.write(f'{ytid},{video_file},{audio_file}\n')
+                    await log.flush()
+                progress[ytid] = True
             if DELETE_DOWNLOADED_VIDEO:
                 os.remove(video_file)
 
-async def process_csv_file(csv_file: str, timer: int, remove_exist: bool, youtube_url_fmt: str) -> None:
+async def process_csv_file(csv_file: str, timer: int, remove_exist: bool, youtube_url_fmt: str, progress: Dict[str, bool]) -> None:
     logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s - pid:%(process)d", handlers=[
                         logging.FileHandler(filename=f"{csv_file}_dl.log", mode="w"), logging.StreamHandler(stream=sys.stdout)])
     save_dir = f"./{csv_file}.splits/"
@@ -86,6 +90,7 @@ async def process_csv_file(csv_file: str, timer: int, remove_exist: bool, youtub
             os.makedirs(save_dir)
 
     semaphore = asyncio.Semaphore(CONCURRENT_TASKS)
+    log_file = LOG_FILE
     tasks = []
     async with aio_open(f"{csv_file}.split-pos.csv", "w") as split_audio_positive_label:
         async with aio_open(csv_file, "r") as csv_fin:
@@ -94,20 +99,32 @@ async def process_csv_file(csv_file: str, timer: int, remove_exist: bool, youtub
                 if 0 < timer == i:
                     break
                 raw = {"YTID": line[0], "start_sec": int(float(line[1].replace(" ", ""))), "end_sec": int(float(line[2].replace(" ", ""))), "positive_labels": line[3:]}
+                if raw["YTID"] in progress and progress[raw["YTID"]]:
+                    continue
                 url = youtube_url_fmt.format(YTID=raw["YTID"])
-                task = download_and_process(url, raw["YTID"], raw["start_sec"], raw["end_sec"], save_dir, split_audio_positive_label, raw["positive_labels"], semaphore)
+                task = download_and_process(url, raw["YTID"], raw["start_sec"], raw["end_sec"], save_dir, split_audio_positive_label, raw["positive_labels"], semaphore, log_file, progress)
                 tasks.append(task)
 
             await asyncio.gather(*tasks)
 
+def load_progress(log_file: str) -> Dict[str, bool]:
+    progress = {}
+    if os.path.exists(log_file):
+        with open(log_file, "r") as f:
+            for line in f:
+                ytid = line.strip().split(',')[0]
+                progress[ytid] = True
+    return progress
+
 def run_process_csv_file(csv_file, timer, remove_exist, youtube_url_fmt):
-    asyncio.run(process_csv_file(csv_file, timer, remove_exist, youtube_url_fmt))
+    progress = load_progress(LOG_FILE)
+    asyncio.run(process_csv_file(csv_file, timer, remove_exist, youtube_url_fmt, progress))
 
 def main():
     if DEBUG:
         run_process_csv_file(CSV_FILE_NAMES[0], TIMER, REMOVE_EXIST_DOWNLOADS, YTB_URL_FORMAT)
     else:
-        with multiprocessing.Pool(24) as pool:
+        with multiprocessing.Pool(POOL_SIZE) as pool:
             pool.starmap(run_process_csv_file, [(csv_file, TIMER, REMOVE_EXIST_DOWNLOADS, YTB_URL_FORMAT) for csv_file in CSV_FILE_NAMES])
 
 if __name__ == "__main__":
