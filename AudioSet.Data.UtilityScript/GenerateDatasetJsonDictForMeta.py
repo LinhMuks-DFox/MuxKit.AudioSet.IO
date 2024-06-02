@@ -23,7 +23,7 @@ import csv
 import typing
 
 FILE_IN = r"../AudioSet.Meta/unbalanced_train_segments.csv"
-FILE_OUT = r"../AudioSet.Meta.Json/unbalanced_train_segments.json"
+FILE_OUT = r"../AudioSet.Meta/unbalanced_train_segments.json"
 CLS_LABEL_INDICES = "../AudioSet.Meta.Json/class_labels_indices.json"
 
 

@@ -1,2 +1,5 @@
 AudioSet.Meta.Json/
 AudioSet.Split.MetaCSV/
+.idea/
+.env/
+__pycache__/
