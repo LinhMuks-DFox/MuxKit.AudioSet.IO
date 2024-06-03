@@ -6,8 +6,8 @@ df = pd.read_csv(file_path)
 
 # List of categories to find
 categories = [
-    "Insect", "Drum-Roll", "Bicycle", "Skateboard", "Fireworks", "Spary", 
-    "Ocean", "Power Tools", "Horse", "Rain", "Vocal Music", "Cat", "Radio", 
+    "Insect", "Drum roll", "Bicycle", "Skateboard", "Fireworks", "Spray", 
+    "Ocean", "Power tool", "Horse", "Rain", "Vocal music", "Cat", "Radio", 
     "Run", "Wind", "Dog", "Bird", "Train", "Crowd", "Engine"
 ]
 
