@@ -25,7 +25,7 @@ async def download_video_clip(url: str, youtube_id: str, start_sec: int, end_sec
     if os.path.exists(output_name):
         logging.info(f"File {output_name} already exists, skipping download.")
         return output_name
-    await asyncio.sleep(random.uniform(1, 5))
+    await asyncio.sleep(random.uniform(3, 10))
     try:
         download_cmd = [
             "yt-dlp",
@@ -52,7 +52,6 @@ async def extract_audio(video_file: str, save_dir: str) -> Union[str, None]:
     if os.path.exists(output_name):
         logging.info(f"File {output_name} already exists, skipping extraction.")
         return output_name
-
     success = await run_subprocess([
         "ffmpeg",
         "-i", video_file,
@@ -70,6 +69,10 @@ async def extract_audio(video_file: str, save_dir: str) -> Union[str, None]:
 
 async def download_and_process(url, ytid, start_sec, end_sec, save_dir, split_audio_positive_label, positive_labels, semaphore, log_file):
     async with semaphore:
+        wav = os.path.join(save_dir, f"{ytid}.wav")
+        if os.path.exists(wav):
+            logging.info(f"{wav} exists, skip downloading.")
+            return 
         video_file = await download_video_clip(url, ytid, start_sec, end_sec, save_dir)
         if video_file:
             audio_file = await extract_audio(video_file, save_dir)
