@@ -1,30 +1,7 @@
 from typing import List
 
 CSV_FILE_NAMES: List[str] = [
-    "unbalanced_train_segments_1.csv",
-    "unbalanced_train_segments_2.csv",
-    "unbalanced_train_segments_3.csv",
-    "unbalanced_train_segments_4.csv",
-    "unbalanced_train_segments_5.csv",
-    "unbalanced_train_segments_6.csv",
-    "unbalanced_train_segments_7.csv",
-    "unbalanced_train_segments_8.csv",
-    "unbalanced_train_segments_9.csv",
-    "unbalanced_train_segments_10.csv",
-    "unbalanced_train_segments_11.csv",
-    "unbalanced_train_segments_12.csv",
-    # "unbalanced_train_segments_13.csv",
-    # "unbalanced_train_segments_14.csv",
-    # "unbalanced_train_segments_15.csv",
-    # "unbalanced_train_segments_16.csv",
-    # "unbalanced_train_segments_17.csv",
-    # "unbalanced_train_segments_18.csv",
-    # "unbalanced_train_segments_19.csv",
-    # "unbalanced_train_segments_20.csv",
-    # "unbalanced_train_segments_21.csv",
-    # "unbalanced_train_segments_22.csv",
-    # "unbalanced_train_segments_23.csv",
-    # "unbalanced_train_segments_24.csv"
+    "filtered_database_reduced.csv",
 ]
 YTB_URL_FORMAT: str = "https://www.youtube.com/watch?v={YTID}"
 TIMER: int = 10  # using -1 , to download all
@@ -35,6 +12,6 @@ DEBUG: bool = False
 ONLY_AUDIO: bool = False
 DELETE_DOWNLOADED_VIDEO: bool = True
 DELETE_WAVE_FILE: bool = True
-CONCURRENT_TASKS: int = 2  # 每次并发处理的任务数，减少负载
-LOG_FILE: str = "download_progress.log"
+CONCURRENT_TASKS: int = 3  # 每次并发处理的任务数，减少负载
 POOL_SIZE = 2
+USER_AGENT: str = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"

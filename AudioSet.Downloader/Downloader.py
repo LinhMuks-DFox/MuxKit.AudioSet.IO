@@ -21,17 +21,17 @@ async def run_subprocess(cmd):
     return proc.returncode == 0
 
 async def download_video_clip(url: str, youtube_id: str, start_sec: int, end_sec: int, save_dir: str) -> Union[str, None]:
-    await asyncio.sleep(random.uniform(1, 3))
     output_name = os.path.join(save_dir, f"{youtube_id}.mp4")
     if os.path.exists(output_name):
         logging.info(f"File {output_name} already exists, skipping download.")
         return output_name
+    await asyncio.sleep(random.uniform(1, 5))
     try:
         download_cmd = [
             "yt-dlp",
             "-f", "bestaudio",
             "--external-downloader", "ffmpeg",
-            "--external-downloader-args", f"ffmpeg_i:-ss {start_sec} -to {end_sec}",
+            "--external-downloader-args", f"-ss {start_sec} -to {end_sec}",
             "-o", output_name,
             url
         ]
@@ -68,7 +68,7 @@ async def extract_audio(video_file: str, save_dir: str) -> Union[str, None]:
         logging.info(f"Downloaded {output_name}")
     return output_name
 
-async def download_and_process(url, ytid, start_sec, end_sec, save_dir, split_audio_positive_label, positive_labels, semaphore, log_file, progress: Dict[str, bool]):
+async def download_and_process(url, ytid, start_sec, end_sec, save_dir, split_audio_positive_label, positive_labels, semaphore, log_file):
     async with semaphore:
         video_file = await download_video_clip(url, ytid, start_sec, end_sec, save_dir)
         if video_file:
@@ -79,11 +79,10 @@ async def download_and_process(url, ytid, start_sec, end_sec, save_dir, split_au
                 async with aio_open(log_file, "a") as log:
                     await log.write(f'{ytid},{video_file},{audio_file}\n')
                     await log.flush()
-                progress[ytid] = True
             if DELETE_DOWNLOADED_VIDEO:
                 os.remove(video_file)
 
-async def process_csv_file(csv_file: str, timer: int, remove_exist: bool, youtube_url_fmt: str, progress: Dict[str, bool]) -> None:
+async def process_csv_file(csv_file: str, timer: int, remove_exist: bool, youtube_url_fmt: str) -> None:
     logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s - pid:%(process)d", handlers=[
                         logging.FileHandler(filename=f"{csv_file}_dl.log", mode="w"), logging.StreamHandler(stream=sys.stdout)])
     save_dir = f"./{csv_file}.splits/"
@@ -104,26 +103,14 @@ async def process_csv_file(csv_file: str, timer: int, remove_exist: bool, youtub
                 if 0 < timer == i:
                     break
                 raw = {"YTID": line[0], "start_sec": int(float(line[1].replace(" ", ""))), "end_sec": int(float(line[2].replace(" ", ""))), "positive_labels": line[3:]}
-                if raw["YTID"] in progress and progress[raw["YTID"]]:
-                    continue
                 url = youtube_url_fmt.format(YTID=raw["YTID"])
-                task = download_and_process(url, raw["YTID"], raw["start_sec"], raw["end_sec"], save_dir, split_audio_positive_label, raw["positive_labels"], semaphore, log_file, progress)
+                task = download_and_process(url, raw["YTID"], raw["start_sec"], raw["end_sec"], save_dir, split_audio_positive_label, raw["positive_labels"], semaphore, log_file)
                 tasks.append(task)
 
             await asyncio.gather(*tasks)
 
-def load_progress(log_file: str) -> Dict[str, bool]:
-    progress = {}
-    if os.path.exists(log_file):
-        with open(log_file, "r") as f:
-            for line in f:
-                ytid = line.strip().split(',')[0]
-                progress[ytid] = True
-    return progress
-
 def run_process_csv_file(csv_file, timer, remove_exist, youtube_url_fmt):
-    progress = load_progress(LOG_FILE)
-    asyncio.run(process_csv_file(csv_file, timer, remove_exist, youtube_url_fmt, progress))
+    asyncio.run(process_csv_file(csv_file, timer, remove_exist, youtube_url_fmt))
 
 def main():
     if DEBUG:

@@ -1,0 +1,38 @@
+import os
+import wave
+import contextlib
+import csv
+
+def get_wav_duration(file_path):
+    with contextlib.closing(wave.open(file_path, 'r')) as f:
+        frames = f.getnframes()
+        rate = f.getframerate()
+        duration = frames / float(rate)
+    return duration
+
+def find_long_wav_files(directory, min_duration=11):
+    long_wav_files = []
+    for root, _, files in os.walk(directory):
+        for file in files:
+            if file.endswith('.wav'):
+                file_path = os.path.join(root, file)
+                duration = get_wav_duration(file_path)
+                if duration > min_duration:
+                    long_wav_files.append((file_path, duration))
+    return long_wav_files
+
+def save_to_csv(data, output_csv):
+    with open(output_csv, 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(['File Path', 'Duration (s)'])
+        writer.writerows(data)
+
+def main(input_directory, output_csv):
+    long_wav_files = find_long_wav_files(input_directory)
+    save_to_csv(long_wav_files, output_csv)
+    print(f'Saved {len(long_wav_files)} entries to {output_csv}')
+
+if __name__ == '__main__':
+    input_directory = './filtered_database_reduced.csv.splits/'  # 替换为您的wav文件夹路径
+    output_csv = 'long_wav_files.csv'  # 输出的csv文件名
+    main(input_directory, output_csv)

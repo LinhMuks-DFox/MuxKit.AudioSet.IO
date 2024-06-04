@@ -1,0 +1,83 @@
+#!/usr/bin/env python3
+
+import os
+import json
+import subprocess
+from datetime import datetime
+
+# 要统计的文件夹路径
+FOLDER_PATH = 'filtered_database_reduced.csv.splits/'
+# 保存统计结果的文件路径
+STATS_FILE = 'folder_stats.json'
+
+# ANSI 颜色代码
+COLOR_GREEN = '\033[92m'
+COLOR_RESET = '\033[0m'
+
+def get_folder_stats(folder_path):
+    """统计文件夹内的文件数量和大小"""
+    num_files = len(os.listdir(folder_path))
+    size_result = subprocess.run(['du', '-sh', folder_path], capture_output=True, text=True)
+    size = size_result.stdout.split()[0]  # 获取大小
+    size_in_bytes = convert_size_to_bytes(size)
+    return {'num_files': num_files, 'size': size, 'size_in_bytes': size_in_bytes}
+
+def convert_size_to_bytes(size):
+    """将人类可读的大小转换为字节数"""
+    size_units = {'K': 1024, 'M': 1024 ** 2, 'G': 1024 ** 3, 'T': 1024 ** 4}
+    if size[-1].isdigit():  # 没有单位，假设是字节
+        return int(size)
+    else:
+        unit = size[-1]
+        number = float(size[:-1])
+        return int(number * size_units[unit.upper()])
+
+def convert_bytes_to_human_readable(size_in_bytes):
+    """将字节数转换为人类可读的大小"""
+    for unit in ['B', 'K', 'M', 'G', 'T']:
+        if size_in_bytes < 1024:
+            return f"{size_in_bytes}{unit}"
+        size_in_bytes /= 1024
+    return f"{size_in_bytes}T"
+
+def load_previous_stats(file_path):
+    """加载之前的统计数据"""
+    if os.path.exists(file_path):
+        with open(file_path, 'r') as file:
+            return json.load(file)
+    return {}
+
+def save_current_stats(file_path, stats):
+    """保存当前的统计数据"""
+    with open(file_path, 'w') as file:
+        json.dump(stats, file, indent=4)
+
+def calculate_differences(previous_stats, current_stats):
+    """计算前后两次运行的区别"""
+    differences = {}
+    if previous_stats:
+        num_files_diff = current_stats['num_files'] - previous_stats['num_files']
+        size_diff = f"{current_stats['size']} (previous: {previous_stats['size']})"
+        differences = {'num_files_diff': num_files_diff, 'size_diff': size_diff}
+    else:
+        differences = {'num_files_diff': current_stats['num_files'], 'size_diff': current_stats['size']}
+    return differences
+
+def main():
+    current_stats = get_folder_stats(FOLDER_PATH)
+    previous_stats = load_previous_stats(STATS_FILE)
+    differences = calculate_differences(previous_stats, current_stats)
+    save_current_stats(STATS_FILE, current_stats)
+
+    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    print(f"Statistics as of {timestamp}:\n")
+    
+    num_files_diff = f"{COLOR_GREEN}{differences['num_files_diff']}{COLOR_RESET}" if 'num_files_diff' in differences and differences['num_files_diff'] > 0 else differences.get('num_files_diff', 0)
+    size_diff = f"{COLOR_GREEN}{differences['size_diff']}{COLOR_RESET}" if 'size_diff' in differences and ("previous" not in differences['size_diff'] or "previous: 0" in differences['size_diff']) else differences.get('size_diff', '0B')
+    
+    print(f"Folder: {FOLDER_PATH}")
+    print(f"  Number of files difference: {num_files_diff}")
+    print(f"  Size difference: {size_diff}\n")
+
+if __name__ == "__main__":
+    main()
