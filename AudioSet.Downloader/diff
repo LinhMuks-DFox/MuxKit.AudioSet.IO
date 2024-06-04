@@ -9,6 +9,8 @@ from datetime import datetime
 FOLDER_PATH = 'filtered_database_reduced.csv.splits/'
 # 保存统计结果的文件路径
 STATS_FILE = 'folder_stats.json'
+# 文件总数
+TOTAL_FILES = 58550
 
 # ANSI 颜色代码
 COLOR_GREEN = '\033[92m'
@@ -63,12 +65,20 @@ def calculate_differences(previous_stats, current_stats):
         differences = {'num_files_diff': current_stats['num_files'], 'size_diff': current_stats['size']}
     return differences
 
+def display_progress(num_files, total_files):
+    """显示进度条"""
+    progress = (num_files / total_files) * 100
+    bar_length = 50  # 进度条长度
+    block = int(bar_length * progress / 100)
+    progress_bar = f"[{'#' * block}{'-' * (bar_length - block)}] {progress:.2f}% ({num_files}/{total_files})"
+    print(progress_bar)
+
 def main():
     current_stats = get_folder_stats(FOLDER_PATH)
     previous_stats = load_previous_stats(STATS_FILE)
     differences = calculate_differences(previous_stats, current_stats)
     save_current_stats(STATS_FILE, current_stats)
-
+    os.system("clear")
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     print(f"Statistics as of {timestamp}:\n")
     
@@ -78,6 +88,11 @@ def main():
     print(f"Folder: {FOLDER_PATH}")
     print(f"  Number of files difference: {num_files_diff}")
     print(f"  Size difference: {size_diff}\n")
+
+    display_progress(current_stats['num_files'], TOTAL_FILES)
+    
+    print("Cleaning data...")
+    os.system("./data_clean")
 
 if __name__ == "__main__":
     main()
